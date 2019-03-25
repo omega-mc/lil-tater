@@ -5,25 +5,20 @@ plugins {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-archivesBaseName = "modid"
-version = "1.0.0"
+archivesBaseName = "lil-tater"
+version = "1.0.2"
 
 minecraft {
 }
 
-repositories {
-	maven {url "https://maven.jamieswhiteshirt.com/libs-release/"}
-}
 
 dependencies {
-	minecraft "com.mojang:minecraft:19w08b"
-	mappings "net.fabricmc:yarn:19w08b.3"
+	minecraft "com.mojang:minecraft:19w12a"
+	mappings "net.fabricmc:yarn:19w12a.1"
 	modCompile "net.fabricmc:fabric-loader:0.3.7.109"
 
-	// Fabric api
-	modCompile "net.fabricmc:fabric:0.2.2.103"
-
-	modCompile "com.jamieswhiteshirt:developer-mode:1.0.2"
+	//Fabric api
+	modCompile "net.fabricmc:fabric:0.2.4.112"
 }
 
 // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
