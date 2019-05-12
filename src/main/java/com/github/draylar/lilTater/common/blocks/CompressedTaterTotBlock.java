@@ -1,6 +1,5 @@
 package com.github.draylar.lilTater.common.blocks;
 
-import com.github.draylar.lilTater.LilTater;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Waterloggable;
@@ -75,7 +74,7 @@ public class CompressedTaterTotBlock extends Block implements Waterloggable
     public List<ItemStack> getDroppedStacks(BlockState blockState_1, LootContext.Builder lootContext$Builder_1)
     {
         ArrayList<ItemStack> stack = new ArrayList<>();
-        stack.add(new ItemStack(LilTater.COMPRESSED_TOT_ITEM));
+        stack.add(new ItemStack(this.getItem()));
         return stack;
     }
 }
