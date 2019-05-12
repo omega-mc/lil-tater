@@ -1,4 +1,4 @@
-package com.github.draylar.lilTater.blocks;
+package com.github.draylar.lilTater.common.blocks;
 
 import com.github.draylar.lilTater.LilTater;
 import net.minecraft.block.Block;
