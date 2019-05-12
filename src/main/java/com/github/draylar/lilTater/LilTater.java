@@ -9,6 +9,8 @@ import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -24,7 +26,7 @@ public class LilTater implements ModInitializer
 
 	// lil tater tot
 	public static final LilTaterTotBlock TATER_TOT_BLOCK = new LilTaterTotBlock(FabricBlockSettings.of(Material.TNT).hardness(0.5f).build());
-	public static final Item TATER_TOT_ITEM = new Item(new Item.Settings().food(new FoodItemSetting.Builder().hunger(10).build()).itemGroup(ItemGroup.MISC))
+	public static final Item TATER_TOT_ITEM = new Item(new Item.Settings().food(new FoodItemSetting.Builder().hunger(6).build()).itemGroup(ItemGroup.MISC))
 	{
 		@Override
 		public ActionResult useOnBlock(ItemUsageContext itemUsageContext_1)
@@ -70,7 +72,7 @@ public class LilTater implements ModInitializer
 
 	// irritated lil tater
 	public static final IrritatedLilTaterBlock IRRITATED_TATER_BLOCK = new IrritatedLilTaterBlock(FabricBlockSettings.of(Material.TNT).hardness(1f).build());
-	public static final Item IRRITATED_TATER_ITEM = new Item(new Item.Settings().food(new FoodItemSetting.Builder().hunger(10).build()).itemGroup(ItemGroup.MISC))
+	public static final Item IRRITATED_TATER_ITEM = new Item(new Item.Settings().food(new FoodItemSetting.Builder().hunger(4).build()).itemGroup(ItemGroup.MISC))
 	{
 		@Override
 		public ActionResult useOnBlock(ItemUsageContext itemUsageContext_1)
@@ -93,11 +95,7 @@ public class LilTater implements ModInitializer
 		@Override
 		public ItemStack onItemFinishedUsing(ItemStack itemStack_1, World world_1, LivingEntity livingEntity_1)
 		{
-			if(livingEntity_1 instanceof ServerPlayerEntity)
-			{
-				LilTaterCutscene.runHallucinations((PlayerEntity) livingEntity_1);
-			}
-
+			livingEntity_1.addPotionEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 5 * 20, 1));
 			return super.onItemFinishedUsing(itemStack_1, world_1, livingEntity_1);
 		}
 	};

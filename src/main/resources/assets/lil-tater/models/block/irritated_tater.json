@@ -1,7 +1,7 @@
 {
 	"textures": {
-		"0": "lil-tater:irritated_tater_block",
-		"particle": "lil-tater:irritated_tater_block"
+		"0": "lil-tater:block/irritated_tater",
+		"particle": "lil-tater:block/irritated_tater"
 	},
 	"elements": [
 		{

@@ -3,6 +3,7 @@ package com.github.draylar.lilTater.blocks;
 import com.github.draylar.lilTater.LilTater;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Waterloggable;
 import net.minecraft.entity.VerticalEntityPosition;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
@@ -19,10 +20,10 @@ import net.minecraft.world.loot.context.LootContext;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LilTaterTotBlock extends Block
+public class LilTaterTotBlock extends Block implements Waterloggable
 {
     public static final DirectionProperty FACING = Properties.FACING;
-    private static final VoxelShape voxel = VoxelShapes.cube(6 / 16f, 0, 6 / 16f, 10 / 16f, 7 / 16f, 10 / 16f);
+    private static final VoxelShape voxel = VoxelShapes.cuboid(6 / 16f, 0, 6 / 16f, 10 / 16f, 7 / 16f, 10 / 16f);
 
     public LilTaterTotBlock(Settings block$Settings_1)
     {
