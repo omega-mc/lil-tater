@@ -22,7 +22,7 @@ import java.util.List;
 public class CompressedTaterTotBlock extends Block
 {
     public static final DirectionProperty FACING = Properties.FACING;
-    private static final VoxelShape voxel = VoxelShapes.cube(4 / 16f, 0, 4 / 16f, 12 / 16f, 14 / 16f, 12 / 16f);
+    private static final VoxelShape voxel = VoxelShapes.cuboid(4 / 16f, 0, 4 / 16f, 12 / 16f, 14 / 16f, 12 / 16f);
 
     public CompressedTaterTotBlock(Settings block$Settings_1)
     {

@@ -19,12 +19,12 @@ import net.minecraft.world.loot.context.LootContext;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LilTaterBlock extends Block
+public class IrritatedLilTaterBlock extends Block
 {
-    private static final DirectionProperty FACING = Properties.FACING;
-    private static final VoxelShape voxel = Block.createCuboidShape(6, 0, 6, 6, 10, 7);
+    public static final DirectionProperty FACING = Properties.FACING;
+    private static final VoxelShape voxel = VoxelShapes.cube(6 / 16f, 0, 6 / 16f, 10 / 16f, 7 / 16f, 10 / 16f);
 
-    public LilTaterBlock(Settings block$Settings_1)
+    public IrritatedLilTaterBlock(Settings block$Settings_1)
     {
         super(block$Settings_1);
         this.setDefaultState(this.stateFactory.getDefaultState().with(FACING, Direction.NORTH));
@@ -74,7 +74,7 @@ public class LilTaterBlock extends Block
     public List<ItemStack> getDroppedStacks(BlockState blockState_1, LootContext.Builder lootContext$Builder_1)
     {
         ArrayList<ItemStack> stack = new ArrayList<>();
-        stack.add(new ItemStack(LilTater.LIL_TATER_ITEM));
+        stack.add(new ItemStack(LilTater.TATER_TOT_ITEM));
         return stack;
     }
 }
