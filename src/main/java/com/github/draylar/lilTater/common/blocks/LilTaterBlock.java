@@ -15,6 +15,7 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Hand;
+import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -102,5 +103,21 @@ public class LilTaterBlock extends Block implements Waterloggable, BlockEntityPr
             return ((LilTaterBlockEntity) be).use(player, hand, hit);
         }
         return false;
+    }
+
+    @Override
+    public void onBlockRemoved(BlockState state1, World world, BlockPos pos, BlockState state2, boolean flag)
+    {
+        if (state1.getBlock() != state2.getBlock())
+        {
+            BlockEntity be = world.getBlockEntity(pos);
+            if (be instanceof LilTaterBlockEntity)
+            {
+                ItemScatterer.spawn(world, pos, ((LilTaterBlockEntity) be).getAllItems());
+                world.updateHorizontalAdjacent(pos, this);
+            }
+
+            super.onBlockRemoved(state1, world, pos, state2, flag);
+        }
     }
 }
