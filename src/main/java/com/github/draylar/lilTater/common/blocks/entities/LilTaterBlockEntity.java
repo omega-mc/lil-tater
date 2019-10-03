@@ -45,19 +45,22 @@ public class LilTaterBlockEntity extends BlockEntity implements BlockEntityClien
                 if (isLeft)
                 {
                     leftItem = ItemStack.EMPTY;
-                } else
+                }
+                else
                 {
                     rightItem = ItemStack.EMPTY;
                 }
                 sync();
                 markDirty();
-            } else if (!handStack.isEmpty())
+            }
+            else if (!handStack.isEmpty())
             {
                 if (isLeft)
                 {
                     leftItem = handStack.copy();
                     leftItem.setAmount(1);
-                } else
+                }
+                else
                 {
                     rightItem = handStack.copy();
                     rightItem.setAmount(1);
