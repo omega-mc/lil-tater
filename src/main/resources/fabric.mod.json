@@ -1,17 +1,15 @@
 {
+  "schemaVersion": 1,
   "id": "lil-tater",
   "name": "Lil Tater",
   "description": "gogogo lil tater",
   "version": "1.0.2",
-  "side": "universal",
-  "initializers": [
-    "com.github.draylar.lilTater.LilTater"
-  ],
-  "requires": {
-    "fabric": "*"
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.github.draylar.lilTater.LilTater"],
+    "client": ["com.github.draylar.lilTater.client.LilTaterClient"]
   },
-  "mixins": {
-    "client": "modid.client.json",
-    "common": "modid.common.json"
+  "depends": {
+    "fabric": "*"
   }
 }
