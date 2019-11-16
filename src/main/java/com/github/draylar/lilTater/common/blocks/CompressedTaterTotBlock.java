@@ -3,10 +3,11 @@ package com.github.draylar.lilTater.common.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Waterloggable;
-import net.minecraft.entity.VerticalEntityPosition;
+import net.minecraft.entity.EntityContext;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.state.StateFactory;
+import net.minecraft.loot.context.LootContext;
+import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
@@ -14,7 +15,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.loot.context.LootContext;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ import java.util.List;
 public class CompressedTaterTotBlock extends Block implements Waterloggable
 {
     public static final DirectionProperty FACING = Properties.FACING;
-    private static final VoxelShape voxel = VoxelShapes.cuboid(4 / 16f, 0, 4 / 16f, 12 / 16f, 14 / 16f, 12 / 16f);
+    private static final VoxelShape SHAPE = VoxelShapes.cuboid(4 / 16f, 0, 4 / 16f, 12 / 16f, 14 / 16f, 12 / 16f);
 
     public CompressedTaterTotBlock(Settings block$Settings_1)
     {
@@ -42,39 +42,32 @@ public class CompressedTaterTotBlock extends Block implements Waterloggable
         return false;
     }
 
+    @Override
     public BlockState getPlacementState(ItemPlacementContext itemPlacementContext_1)
     {
-        return this.getDefaultState().with(FACING, itemPlacementContext_1.getPlayerHorizontalFacing().getOpposite());
-    }
-
-    protected void appendProperties(StateFactory.Builder<Block, BlockState> stateFactory$Builder_1)
-    {
-        stateFactory$Builder_1.with(FACING);
+        return this.getDefaultState().with(FACING, itemPlacementContext_1.getPlayerFacing().getOpposite());
     }
 
     @Override
-    public boolean isFullBoundsCubeForCulling(BlockState blockState_1)
-    {
-        return false;
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        super.appendProperties(builder);
+        builder.add(FACING);
+    }
+    @Override
+    public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, EntityContext ePos) {
+        return SHAPE;
     }
 
     @Override
-    public VoxelShape getCollisionShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, VerticalEntityPosition verticalEntityPosition_1)
-    {
-        return voxel;
+    public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, EntityContext ePos) {
+        return SHAPE;
     }
 
     @Override
-    public VoxelShape getOutlineShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, VerticalEntityPosition verticalEntityPosition_1)
-    {
-        return voxel;
-    }
-
-    @Override
-    public List<ItemStack> getDroppedStacks(BlockState blockState_1, LootContext.Builder lootContext$Builder_1)
+    public List<ItemStack> getDroppedStacks(BlockState state, LootContext.Builder builder)
     {
         ArrayList<ItemStack> stack = new ArrayList<>();
-        stack.add(new ItemStack(this.getItem()));
+        stack.add(new ItemStack(this.asItem()));
         return stack;
     }
 }

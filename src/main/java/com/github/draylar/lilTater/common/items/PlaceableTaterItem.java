@@ -1,11 +1,11 @@
 package com.github.draylar.lilTater.common.items;
 
-import com.github.draylar.lilTater.common.blocks.TaterTotBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.item.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsageContext;
 import net.minecraft.util.ActionResult;
 import net.minecraft.world.World;
 
@@ -32,13 +32,11 @@ public class PlaceableTaterItem extends BlockItem
     }
 
     @Override
-    public ItemStack onItemFinishedUsing(ItemStack itemStack_1, World world_1, LivingEntity livingEntity_1)
-    {
-        if(statusEffect != null)
-        {
-            livingEntity_1.addPotionEffect(statusEffect);
+    public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
+        if(statusEffect != null) {
+            user.addStatusEffect(statusEffect);
         }
-        
-        return super.onItemFinishedUsing(itemStack_1, world_1, livingEntity_1);
+
+        return super.finishUsing(stack, world, user);
     }
 }

@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.DefaultedList;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
@@ -25,13 +26,13 @@ public class LilTaterBlockEntity extends BlockEntity implements BlockEntityClien
         super(Blocks.LIL_TATER_BLOCK_ENTITY);
     }
 
-    public boolean use(PlayerEntity player, Hand hand, BlockHitResult hit)
+    public ActionResult use(PlayerEntity player, Hand hand, BlockHitResult hit)
     {
         Direction facing = getCachedState().get(LilTaterBlock.FACING);
         Direction hitSide = hit.getSide();
         if (hitSide != facing.rotateYClockwise() && hitSide != facing.rotateYCounterclockwise())
         {
-            return false;
+            return ActionResult.FAIL;
         }
 
         if (!world.isClient)
@@ -41,7 +42,7 @@ public class LilTaterBlockEntity extends BlockEntity implements BlockEntityClien
             ItemStack heldItem = isLeft ? leftItem : rightItem;
             if (!heldItem.isEmpty())
             {
-                ItemScatterer.spawn(world, pos, DefaultedList.create(ItemStack.EMPTY, heldItem));
+                ItemScatterer.spawn(world, pos, DefaultedList.copyOf(ItemStack.EMPTY, heldItem));
                 if (isLeft)
                 {
                     leftItem = ItemStack.EMPTY;
@@ -58,29 +59,20 @@ public class LilTaterBlockEntity extends BlockEntity implements BlockEntityClien
                 if (isLeft)
                 {
                     leftItem = handStack.copy();
-                    leftItem.setAmount(1);
+                    leftItem.setCount(1);
                 }
                 else
                 {
                     rightItem = handStack.copy();
-                    rightItem.setAmount(1);
+                    rightItem.setCount(1);
                 }
-                handStack.subtractAmount(1);
+                handStack.decrement(1);
                 sync();
                 markDirty();
             }
         }
 
-        return true;
-    }
-
-    @Deprecated // TODO: Replace with Fabric API variant
-    private void sync()
-    {
-        if (world instanceof ServerWorld)
-        {
-            ((ServerWorld) world).method_14178().markForUpdate(pos);
-        }
+        return ActionResult.SUCCESS;
     }
 
     public ItemStack getLeftItem()
@@ -95,7 +87,7 @@ public class LilTaterBlockEntity extends BlockEntity implements BlockEntityClien
 
     public DefaultedList<ItemStack> getAllItems()
     {
-        return DefaultedList.create(ItemStack.EMPTY, leftItem, rightItem);
+        return DefaultedList.copyOf(ItemStack.EMPTY, leftItem, rightItem);
     }
 
     @Override

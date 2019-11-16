@@ -7,7 +7,7 @@
   "environment": "*",
   "entrypoints": {
     "main": ["com.github.draylar.lilTater.LilTater"],
-    "client": ["com.github.draylar.lilTater.client.LilTaterClient"]
+    "client": ["com.github.draylar.lilTater.LilTaterClient"]
   },
   "depends": {
     "fabric": "*"
