@@ -1,15 +1,36 @@
 {
   "schemaVersion": 1,
-  "id": "lil-tater",
+  "id": "liltater",
+  "version": "${version}",
+
   "name": "Lil Tater",
   "description": "gogogo lil tater",
-  "version": "1.0.2",
+  "authors": [
+    "Draylar"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Draylar",
+    "sources": "https://github.com/Draylar/fabric-example-mod"
+  },
+
+  "license": "MIT",
+  "icon": "assets/liltater/icon.png",
+
   "environment": "*",
   "entrypoints": {
-    "main": ["com.github.draylar.lilTater.LilTater"],
-    "client": ["com.github.draylar.lilTater.LilTaterClient"]
+    "main": [
+      "com.github.draylar.lilTater.LilTater"
+    ],
+    "client": [
+      "com.github.draylar.lilTater.LilTaterClient"
+    ]
   },
-  "depends": {
+
+  "requires": {
+    "fabricloader": ">=0.4.0",
     "fabric": "*"
+  },
+  "suggests": {
+    "flamingo": "*"
   }
 }

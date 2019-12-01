@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ddd",
+    "ddd",
+    "ddd"
+  ],
+  "key": {
+    "d": {
+      "item": "liltater:lil_tater_tot"
+    }
+  },
+  "result": {
+    "item": "liltater:compressed_tater_tot"
+  }
+}

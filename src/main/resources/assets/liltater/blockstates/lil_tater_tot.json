@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=up": { "model": "liltater:block/lil_tater_tot"},
+    "facing=down": { "model": "liltater:block/lil_tater_tot"},
+    "facing=north": { "model": "liltater:block/lil_tater_tot"},
+    "facing=south": { "model": "liltater:block/lil_tater_tot", "y": 180 },
+    "facing=west": { "model": "liltater:block/lil_tater_tot", "y": 270 },
+    "facing=east": { "model": "liltater:block/lil_tater_tot", "y": 90 }
+  }
+}

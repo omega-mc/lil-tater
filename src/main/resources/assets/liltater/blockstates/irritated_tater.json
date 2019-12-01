@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=up": { "model": "liltater:block/irritated_tater"},
+    "facing=down": { "model": "liltater:block/irritated_tater"},
+    "facing=north": { "model": "liltater:block/irritated_tater"},
+    "facing=south": { "model": "liltater:block/irritated_tater", "y": 180 },
+    "facing=west": { "model": "liltater:block/irritated_tater", "y": 270 },
+    "facing=east": { "model": "liltater:block/irritated_tater", "y": 90 }
+  }
+}
