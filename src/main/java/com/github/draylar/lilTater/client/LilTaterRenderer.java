@@ -35,11 +35,11 @@ public class LilTaterRenderer extends BlockEntityRenderer<TaterBlockEntity> {
         // left item
         matrixStack.translate(0.25f, 0f, 0f);
         matrixStack.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(-90));
-        renderer.method_23178(tater.getLeftItem(), ModelTransformation.Type.FIXED, i, j, matrixStack, vertexConsumerProvider);
+        renderer.renderItem(tater.getLeftItem(), ModelTransformation.Type.FIXED, i, j, matrixStack, vertexConsumerProvider);
 
         // right item
         matrixStack.translate(0f, 0f, .50f);
-        renderer.method_23178(tater.getRightItem(), ModelTransformation.Type.FIXED, i, j, matrixStack, vertexConsumerProvider);
+        renderer.renderItem(tater.getRightItem(), ModelTransformation.Type.FIXED, i, j, matrixStack, vertexConsumerProvider);
 
         matrixStack.pop();
     }
