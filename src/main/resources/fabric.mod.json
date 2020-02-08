@@ -10,7 +10,7 @@
   ],
   "contact": {
     "homepage": "https://github.com/Draylar",
-    "sources": "https://github.com/Draylar/fabric-example-mod"
+    "sources": "https://github.com/Draylar/lil-tater"
   },
 
   "license": "MIT",
@@ -26,8 +26,8 @@
     ]
   },
 
-  "requires": {
-    "fabricloader": ">=0.4.0",
+  "depends": {
+    "fabricloader": ">=0.7.2",
     "fabric": "*"
   },
   "suggests": {
