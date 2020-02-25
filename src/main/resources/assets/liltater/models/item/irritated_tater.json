@@ -1,3 +1,6 @@
 {
-  "parent": "liltater:block/irritated_tater"
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "liltater:item/irritated_tater"
+  }
 }

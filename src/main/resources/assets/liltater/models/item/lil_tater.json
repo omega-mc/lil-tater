@@ -1,3 +1,6 @@
 {
-  "parent": "liltater:block/lil_tater"
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "liltater:item/lil_tater"
+  }
 }

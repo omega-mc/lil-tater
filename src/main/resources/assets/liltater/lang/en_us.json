@@ -1,7 +1,14 @@
 {
+  "item.liltater.golden_potato": "§6Golden Potato",
+  "item.liltater.golden_baked_potato": "§6Golden Baked Potato",
+  "item.liltater.tater_ingot": "Tater Ingot",
+
   "block.liltater.drowned_tater": "Drowned Tater",
   "block.liltater.irritated_tater": "Irritated Tater",
   "block.liltater.lil_tater_tot": "Tater Tot",
   "block.liltater.lil_tater": "Lil Tater",
-  "block.liltater.compressed_tater_tot": "Compressed Tater Tot"
+  "block.liltater.compressed_tater_tot": "Compressed Tater Tot",
+  "block.liltater.block_of_potato": "Block of Potato",
+
+  "itemGroup.liltater.group": "Lil Tater"
 }

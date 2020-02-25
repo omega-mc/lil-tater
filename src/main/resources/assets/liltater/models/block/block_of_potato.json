@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "liltater:block/block_of_potato"
+	}
+}

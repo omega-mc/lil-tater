@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "liltater:item/tater_tot"
+    "layer0": "liltater:item/golden_potato"
   }
 }

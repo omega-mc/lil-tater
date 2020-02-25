@@ -23,7 +23,7 @@ public class Entities {
 
     private static <T extends BlockEntity> BlockEntityType<T> register(String name, BlockEntityType<T> blockEntity) {
         return Registry.register(
-            Registry.BLOCK_ENTITY,
+            Registry.BLOCK_ENTITY_TYPE,
             LilTater.id(name),
             blockEntity
         );
