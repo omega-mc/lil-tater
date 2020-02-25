@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=up": { "model": "liltater:block/drowned_tater_block", "x": 270 },
+        "facing=down": { "model": "liltater:block/drowned_tater_block", "x": 90 },
+        "facing=north": { "model": "liltater:block/drowned_tater_block" },
+        "facing=south": { "model": "liltater:block/drowned_tater_block", "y": 180 },
+        "facing=west": { "model": "liltater:block/drowned_tater_block", "y": 270 },
+        "facing=east": { "model": "liltater:block/drowned_tater_block", "y": 90 }
+    }
+}

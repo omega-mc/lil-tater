@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "ddd",
+      "ddd",
+      "ddd"
+    ],
+    "key": {
+      "d": {
+        "item": "liltater:drowned_tater"
+      }
+    },
+    "result": {
+      "item": "liltater:drowned_tater_block"
+    }
+  }

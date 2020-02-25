@@ -31,7 +31,7 @@ public class TaterBlockItem extends BlockItem {
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         if (statusEffect != null) {
-            user.addStatusEffect(statusEffect);
+            user.addStatusEffect(new StatusEffectInstance(statusEffect));
         }
 
         return super.finishUsing(stack, world, user);

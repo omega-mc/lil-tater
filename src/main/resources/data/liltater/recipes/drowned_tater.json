@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "iii",
+      "iwi",
+      "iii"
+    ],
+    "key": {
+      "i": {
+        "item": "liltater:irritated_tater"
+      },
+      "w": {
+        "item": "minecraft:water_bucket"
+      }
+    },
+    "result": {
+      "item": "liltater:drowned_tater",
+      "count": 8
+    }
+  }
