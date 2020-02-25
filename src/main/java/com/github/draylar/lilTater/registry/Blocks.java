@@ -21,15 +21,15 @@ public class Blocks {
     public static final Block COMPRESSED_TATER_TOT = register("compressed_tater_tot", new CompressedTaterTotBlock(FabricBlockSettings.of(Material.TNT).hardness(1f).build()));
     public static final Block IRRITATED_TATER = register("irritated_tater", new LilTaterBlock(FabricBlockSettings.of(Material.TNT).hardness(1f).build()));
     public static final Block DROWNED_TATER = register("drowned_tater", new LilTaterBlock(FabricBlockSettings.of(Material.TNT).hardness(1f).build()));
-    //public static final Block POISONOUS_TATER = register("poisonous_tater", new LilTaterBlock(FabricBlockSettings.of(Material.TNT).build()));
-    //public static final Block FROSTED_TATER = register("frosted_tater", new LilTaterBlock(FabricBlockSettings.of(Material.TNT).build()));
+    public static final Block POISONOUS_TATER = register("poisonous_tater", new LilTaterBlock(FabricBlockSettings.of(Material.TNT).build()));
+    public static final Block FROSTED_TATER = register("frosted_tater", new LilTaterBlock(FabricBlockSettings.of(Material.TNT).build()));
 
     // tater blocks
     public static final Block IRRITATED_TATER_BLOCK = register("irritated_tater_block", new LilTaterCubeBlock(FabricBlockSettings.of(Material.TNT).hardness(1f).build()));
     public static final Block DROWNED_TATER_BLOCK = register("drowned_tater_block", new LilTaterCubeBlock(FabricBlockSettings.of(Material.TNT).hardness(1f).build()));
 
     // normal blocks
-    //public static final Block BLOCK_OF_POTATO = register("block_of_potato", new Block(FabricBlockSettings.of(Material.SPONGE).build()), new Item.Settings().group(LilTater.GROUP));
+    public static final Block BLOCK_OF_POTATO = register("block_of_potato", new Block(FabricBlockSettings.of(Material.SPONGE).build()), new Item.Settings().group(LilTater.GROUP));
 
     private static Block register(String name, Block block) {
         return Registry.register(Registry.BLOCK, LilTater.id(name), block);
