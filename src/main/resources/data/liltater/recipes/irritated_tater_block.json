@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "iii",
+      "iii",
+      "iii"
+    ],
+    "key": {
+      "i": {
+        "item": "liltater:irritated_tater"
+      }
+    },
+    "result": {
+      "item": "liltater:irritated_tater_block"
+    }
+  }

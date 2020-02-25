@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "liltater:lil_tater"
+      },
+      {
+        "item": "minecraft:red_dye"
+      }
+    ],
+    "result": {
+      "item": "liltater:irritated_tater"
+    }
+  }

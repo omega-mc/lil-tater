@@ -14,11 +14,15 @@ public class Items {
     // taters
     public static final Item LIL_TATER = register("lil_tater", new TaterBlockItem(new Item.Settings(), Blocks.LIL_TATER));
     public static final Item TATER_TOT = register("lil_tater_tot", new TaterBlockItem(new Item.Settings().food(new FoodComponent.Builder().hunger(6).build()).group(LilTater.GROUP), Blocks.TATER_TOT));
-    public static final Item COMPRESSED_TATER_TOT = register("compressed_tater_tot", new TaterBlockItem(new Item.Settings().food(new FoodComponent.Builder().hunger(6 * 9).build()).group(LilTater.GROUP), Blocks.COMPRESSED_TATER_TOT));
-    public static final Item IRRITATED_TATER = register("irritated_tater", new TaterBlockItem(new Item.Settings().food(new FoodComponent.Builder().hunger(6).build()).group(LilTater.GROUP), Blocks.IRRITATED_TATER, new StatusEffectInstance(StatusEffects.STRENGTH, 20 * 5, 1)));
-    public static final Item DROWNED_TATER = register("drowned_tater", new TaterBlockItem(new Item.Settings().food(new FoodComponent.Builder().hunger(6).build()).group(LilTater.GROUP), Blocks.DROWNED_TATER, new StatusEffectInstance(StatusEffects.WATER_BREATHING, 20 * 5, 1)));
-    public static final Item POISONOUS_TATER = register("poisonous_tater", new TaterBlockItem(new Item.Settings().food(new FoodComponent.Builder().hunger(3).build()).group(LilTater.GROUP), Blocks.POISONOUS_TATER, new StatusEffectInstance(StatusEffects.POISON, 20 * 5, 1)));
-    public static final Item FROSTED_TATER = register("frosted_tater", new TaterBlockItem(new Item.Settings().food(new FoodComponent.Builder().hunger(4).build()).group(LilTater.GROUP), Blocks.FROSTED_TATER, new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 5, 1)));
+    public static final Item COMPRESSED_TATER_TOT = register("compressed_tater_tot", new TaterBlockItem(new Item.Settings().food(new FoodComponent.Builder().hunger(54).build()).group(LilTater.GROUP), Blocks.COMPRESSED_TATER_TOT));
+    public static final Item IRRITATED_TATER = register("irritated_tater", new TaterBlockItem(new Item.Settings().food(new FoodComponent.Builder().hunger(6).build()).group(LilTater.GROUP), Blocks.IRRITATED_TATER, new StatusEffectInstance(StatusEffects.STRENGTH, 100, 1)));
+    public static final Item DROWNED_TATER = register("drowned_tater", new TaterBlockItem(new Item.Settings().food(new FoodComponent.Builder().hunger(6).build()).group(LilTater.GROUP), Blocks.DROWNED_TATER, new StatusEffectInstance(StatusEffects.WATER_BREATHING, 1000, 1)));
+    public static final Item POISONOUS_TATER = register("poisonous_tater", new TaterBlockItem(new Item.Settings().food(new FoodComponent.Builder().hunger(3).build()).group(LilTater.GROUP), Blocks.POISONOUS_TATER, new StatusEffectInstance(StatusEffects.POISON, 100, 1)));
+    public static final Item FROSTED_TATER = register("frosted_tater", new TaterBlockItem(new Item.Settings().food(new FoodComponent.Builder().hunger(4).build()).group(LilTater.GROUP), Blocks.FROSTED_TATER, new StatusEffectInstance(StatusEffects.SLOWNESS, 100, 1)));
+
+    // tater blocks
+    private static final Item IRRITATED_TATER_BLOCK = register("irritated_tater_block", new TaterBlockItem(new Item.Settings().food(new FoodComponent.Builder().hunger(54).build()), Blocks.IRRITATED_TATER_BLOCK, new StatusEffectInstance(StatusEffects.STRENGTH, 900, 1)));
+    private static final Item DROWNED_TATER_BLOCK = register("drowned_tater_block", new TaterBlockItem(new Item.Settings().food(new FoodComponent.Builder().hunger(54).build()), Blocks.DROWNED_TATER_BLOCK, new StatusEffectInstance(StatusEffects.WATER_BREATHING, 900, 1)));
 
     // normal items
     public static final Item GOLDEN_POTATO = register("golden_potato", new Item(new Item.Settings().food(new FoodComponent.Builder().hunger(3).saturationModifier(1.5f).build()).group(LilTater.GROUP)));
