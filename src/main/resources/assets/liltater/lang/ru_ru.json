@@ -1,0 +1,16 @@
+{
+  "item.liltater.golden_potato": "§6Золотой картофель",
+  "item.liltater.golden_baked_potato": "§6Золотой печёный картофель",
+  "item.liltater.tater_ingot": "Картофельный слиток",
+
+  "block.liltater.drowned_tater": "Утонувшая картофелина",
+  "block.liltater.drowned_tater_block": "Блок утонувших картофелин",
+  "block.liltater.irritated_tater": "Раздражённая картофелина",
+  "block.liltater.irritated_tater_block": "Блок раздражённых картофелин",
+  "block.liltater.lil_tater_tot": "Жаренная картофелина",
+  "block.liltater.lil_tater": "Мелкая картофелина",
+  "block.liltater.compressed_tater_tot": "Кучка жаренных картофелин",
+  "block.liltater.block_of_potato": "Блок картофеля",
+
+  "itemGroup.liltater.group": "Lil Tater"
+}
